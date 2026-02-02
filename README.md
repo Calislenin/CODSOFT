@@ -12,7 +12,8 @@ A basic calculator application that performs arithmetic operations such as:
 - Addition
 - Subtraction
 - Multiplication
-- Division  
+- Division
+- Modulus 
 
 **Concepts used:**  
 `Functions`, `Conditional statements`, `User input`, `Basic arithmetic`
