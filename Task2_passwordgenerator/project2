@@ -1,0 +1,20 @@
+import random
+import string
+
+print("Welcome to Secure Password Generator")
+
+length = int(input("Enter password length you want: "))
+
+letters = string.ascii_letters
+numbers = string.digits
+symbols = string.punctuation
+
+all_chars = letters + numbers + symbols
+
+generated_password = ""
+
+for i in range(length):
+    generated_password += random.choice(all_chars)
+
+print("Your secure password is:", generated_password)
+

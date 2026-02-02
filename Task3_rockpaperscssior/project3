@@ -1,0 +1,52 @@
+import random
+
+print("👋 Hey Welcome!")
+print("Let's play Rock Paper Scissors 🎮")
+print("Just type:")
+print("R for Rock | P for Paper | S for Scissors")
+
+player_score = 0
+computer_score = 0
+
+choices = {
+    "R": "Rock",
+    "P": "Paper",
+    "S": "Scissors"
+}
+
+while True:
+    user_input = input("\nYour move (R / P / S): ").strip()
+
+    if user_input not in choices:
+        print("😅 Oops! Please type only R, P, or S.")
+        continue
+
+    player_move = choices[user_input]
+    computer_move = random.choice(list(choices.values()))
+
+    print("\n👉 You chose:", player_move)
+    print("🤖 Computer chose:", computer_move)
+
+    if player_move == computer_move:
+         print("It's a tie 🤝 Nobody wins this round")
+    elif (
+        (player_move == "rock" and computer_move == "scissors") or
+        (player_move == "scissors" and computer_move == "paper") or
+        (player_move == "paper" and computer_move == "rock")
+    ):
+        print("Nice! You won this round 🎉")
+        player_score += 1
+    else:
+        print("Ahh! Computer won this round 😅")
+        computer_score += 1
+
+    print("\n📊 Current Score")
+    print("You:", player_score, "| Computer:", computer_score)
+
+    again = input("\nDo you want to play another round? (yes/no): ").lower()
+    if again != "yes":
+        print("\nThanks for playing! Have a great day 👋")
+        break
+
+
+
